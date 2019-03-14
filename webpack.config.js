@@ -1,21 +1,19 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     optimization: {
         runtimeChunk: true,
         splitChunks: {
-            chunks: 'initial',
+            minSize: 0,
             cacheGroups: {
-                default: {
-                    enforce: true,
+                common: {
+                    chunks: 'initial',
                     minChunks: 1,
                 }
             },
         },
     },
     plugins: [
-        new webpack.optimize.ModuleConcatenationPlugin(),
         new HtmlWebpackPlugin(),
     ],
 };

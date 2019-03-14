@@ -1,1 +1,1 @@
-import './dep';
+import './a';
